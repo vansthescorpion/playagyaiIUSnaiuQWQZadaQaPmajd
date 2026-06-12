@@ -4,27 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="robots" content="noindex, nofollow"> 
-  <title>Kind by Design - Career Playbook</title>
+  <meta name="robots" content="noindex, nofollow">
+  <title>Vanessa Gaspar - Career Playbook</title>
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=VT323&family=Shrikhand&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700&family=VT323&family=Shrikhand&family=Playfair+Display:ital,wght@1,700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 
   <style>
-    @font-face {
-      font-family: 'Kindfield';
-      src: url('Kindfield-Regular.otf') format('opentype');
-    }
-
     body {
       font-family: 'Lexend', sans-serif;
-      background-color: #FFF3FC; 
-      color: #000000;
-      overflow: hidden; 
+      background-color: #FFF3FC;
+      color: #291F1E;
+      overflow-x: hidden;
     }
 
     .pixel-text {
@@ -32,17 +25,17 @@
     }
 
     .brand-wordmark {
-      font-family: 'Kindfield', 'Shrikhand', sans-serif;
+      font-family: 'Shrikhand', sans-serif;
       font-weight: 400 !important;
       text-transform: none !important;
-      font-variant-ligatures: normal !important;
-      letter-spacing: 0em;
-      line-height: 1.2 !important;
     }
 
     .zine-texture {
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       opacity: 0.04;
       pointer-events: none;
       z-index: 9999;
@@ -50,102 +43,637 @@
     }
 
     .window-shadow {
-      box-shadow: 4px 4px 0px 0px #000000;
+      box-shadow: 4px 4px 0px 0px #291F1E;
     }
 
     .window-shadow-heavy {
-      box-shadow: 8px 8px 0px 0px #000000;
+      box-shadow: 8px 8px 0px 0px #291F1E;
+    }
+
+    .window-shadow-garnet {
+      box-shadow: 4px 4px 0px 0px #A8003A;
+    }
+
+    @keyframes marquee {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .animate-marquee {
+      display: inline-block;
+      white-space: nowrap;
+      animation: marquee 30s linear infinite;
+    }
+
+    /* Custom scrollbar matching tokens */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FFF3FC;
+      border-left: 3px solid #291F1E;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #291F1E;
+      border: 2px solid #FFF3FC;
     }
   </style>
 </head>
 
-<body class="relative min-h-screen text-black selection:bg-[#A8003A] selection:text-white">
+<body class="relative min-h-screen text-[#291F1E] selection:bg-[#DC326A] selection:text-white">
 
   <div class="zine-texture"></div>
-  <canvas id="pixelCanvas" class="fixed top-0 left-0 w-full h-full pointer-events-none z-50"></canvas>
 
-  <header class="fixed inset-0 w-full h-screen bg-[#FFCFEE] z-50 flex flex-col justify-center items-center px-4 overflow-hidden">
-    <div class="absolute inset-0 opacity-10 bg-[linear-gradient(to_right,#000_1px,transparent_1px),linear-gradient(to_bottom,#000_1px,transparent_1px)] bg-[size:30px_30px]"></div>
-    
-    <div class="z-10 text-center uppercase tracking-tight w-full max-w-2xl px-4 flex flex-col items-center justify-center space-y-6">
-      
-      <div id="playbookHeaderCard" class="bg-white border-4 border-black p-6 w-full max-w-xl window-shadow-heavy opacity-0 transform -translate-y-4 transition-all duration-700">
-        <span class="text-xs bg-[#EFE1FC] text-black border border-black font-bold px-2 py-0.5 rounded-sm pixel-text block w-max mx-auto tracking-widest">
-          Work in Progress
-        </span>
-        <h1 class="text-3xl md:text-5xl font-bold tracking-tight mt-3 text-black font-mono">
-          Career Playbook
-        </h1>
-        <div class="mt-4 text-sm tracking-normal font-normal lowercase brand-wordmark text-[#A8003A]">
-          by Kind by Design
+  <header class="border-b-4 border-[#291F1E] bg-[#EFE1FC] p-6 sticky top-0 z-40 window-shadow">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 bg-[#291F1E] text-white rounded-xs flex items-center justify-center font-bold pixel-text text-xl border-2 border-white window-shadow">VG</div>
+        <div>
+          <h1 class="text-xl font-bold tracking-tight uppercase font-mono">Vanessa Gaspar</h1>
+          <p class="text-[11px] font-bold text-[#DC326A] tracking-wider pixel-text uppercase">Multimedia Student / Product & Interaction Design</p>
         </div>
       </div>
-
-      <div id="playbookStatusCard" class="bg-white border-4 border-black p-5 w-full max-w-lg window-shadow opacity-0 transform translate-y-4 transition-all duration-700 delay-300">
-        <div class="bg-black text-white px-2 py-0.5 font-mono text-[10px] uppercase tracking-widest w-max mb-3">
-          Warning
-        </div>
-        <p class="text-xs font-medium tracking-wide text-left text-gray-800 font-mono leading-relaxed normal-case">
-          The Career Playbook is currently undergoing final content assembly. The complete interactive handbook will initialize shortly.
-        </p>
-        <p class="text-xs font-bold tracking-wide text-left text-gray-800 font-mono leading-relaxed normal-case">
-          Thank you for your patience.<3
-        </p>
-      </div>
-
+      <nav class="flex flex-wrap gap-2 text-xs font-bold font-mono">
+        <a href="#part-1" class="px-3 py-1.5 bg-white border-2 border-[#291F1E] window-shadow hover:bg-[#291F1E] hover:text-white transition-all">01_MY-SELF</a>
+        <a href="#part-2" class="px-3 py-1.5 bg-[#FD9BCF] border-2 border-[#291F1E] window-shadow hover:bg-[#291F1E] hover:text-white transition-all">02_MY-BRAND</a>
+        <a href="#part-3" class="px-3 py-1.5 bg-[#D3B0EA] border-2 border-[#291F1E] window-shadow hover:bg-[#291F1E] hover:text-white transition-all">03_MY-CAREER</a>
+        <a href="#part-4" class="px-3 py-1.5 bg-[#FFCFEE] border-2 border-[#291F1E] window-shadow hover:bg-[#291F1E] hover:text-white transition-all">04_MY-PLAN</a>
+      </nav>
     </div>
   </header>
 
+  <div class="bg-[#291F1E] text-white py-3 border-b-4 border-[#291F1E] overflow-hidden font-bold uppercase tracking-widest text-xs z-30 relative">
+    <div class="w-max">
+      <div class="animate-marquee pixel-text text-sm">
+        KIND BY DESIGN * COGNITIVE ACCESSIBILITY * NEURODIVERSITY IN UX * GAME MECHANICS FOR ADHD * MULTIMEDIA DESIGN * HUMAN-CENTERED DIGITAL ENVIRONMENTS * KIND BY DESIGN * COGNITIVE ACCESSIBILITY * NEURODIVERSITY IN UX * GAME MECHANICS FOR ADHD * MULTIMEDIA DESIGN * HUMAN-CENTERED DIGITAL ENVIRONMENTS * 
+      </div>
+    </div>
+  </div>
+
+  <section class="py-16 px-4 text-center bg-white border-b-4 border-[#291F1E] relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 bg-[linear-gradient(to_right,#291F1E_1px,transparent_1px),linear-gradient(to_bottom,#291F1E_1px,transparent_1px)] bg-[size:30px_30px]"></div>
+    <div class="max-w-4xl mx-auto space-y-6 relative z-10">
+      <span class="px-3 py-1 bg-[#FD9BCF] border-2 border-[#291F1E] text-xs font-mono font-bold uppercase tracking-widest window-shadow">
+        Kind by Design
+      </span>
+      <h2 class="text-5xl md:text-8xl font-bold tracking-tight text-[#DC326A] bg-[#FFF3FC] border-4 border-[#291F1E] p-6 window-shadow-heavy brand-wordmark">
+        My Career Playbook
+      </h2>
+      <p class="max-w-xl mx-auto text-sm font-medium leading-relaxed bg-[#EFE1FC]/30 border-2 border-[#291F1E] p-3 window-shadow font-mono">
+        I join design and technology to build digital experiences that are cognitively accessible, useful, and humane. This playbook outlines who I am, how I position my skills, and how I plan to make my impact visible.
+      </p>
+    </div>
+  </section>
+
+  <main class="max-w-7xl mx-auto p-4 md:p-8 space-y-32 my-12">
+
+    <!-- SECTION 1: THE SELF -->
+    <section id="part-1" class="space-y-12 scroll-mt-24">
+      <div class="flex items-center gap-4 border-b-4 border-[#291F1E] pb-4">
+        <span class="text-4xl font-black bg-[#DC326A] text-white px-4 py-1 border-4 border-[#291F1E] window-shadow font-mono">01</span>
+        <div>
+          <h3 class="text-3xl font-black uppercase tracking-tight font-mono">MY SELF</h3>
+          <p class="text-xs font-bold text-gray-500 uppercase font-mono tracking-widest">Internal alignment, spec sheet, challenges, and energy flow</p>
+        </div>
+      </div>
+
+      <!-- MY ESSENCE & PURPOSE -->
+      <div class="bg-white border-4 border-[#291F1E] p-6 md:p-8 window-shadow rounded-xs space-y-4">
+        <span class="text-xs uppercase tracking-widest font-mono font-bold bg-[#EFE1FC] border border-[#291F1E] px-2 py-0.5">My Essence and Purpose</span>
+        <h4 class="text-2xl font-bold font-mono tracking-tight text-[#A8003A]">Designing with Lived Experience</h4>
+        <div class="text-sm leading-relaxed space-y-4 font-medium text-neutral-800">
+          <p>
+            I am a final-year student in Multimedia and Communication Technologies (MTC) at the University of Aveiro. I have a hybrid profile that bridges the gap between design and front-end development, allowing me to both conceive interactive experiences and program them cleanly.
+          </p>
+          <p>
+            I bring nearly 23 years of lived experience with neurodivergence, which means I know exactly what it is like to navigate a world that isn't always built for how my brain works. My core purpose is to use my creativity to build useful, human, and accessible digital solutions that help people, especially those who are neurodivergent. My ultimate ambition is to be the support for others that I needed but did not have in the past.
+          </p>
+        </div>
+      </div>
+
+      <!-- PERSONAL AND PROFESSIONAL INTERESTS -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="bg-white border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-3 relative border-t-8 border-t-[#DC326A]">
+          <h5 class="font-mono font-bold text-sm uppercase text-[#DC326A] border-b border-[#291F1E] pb-1">My Personal Interests</h5>
+          <p class="text-xs leading-relaxed text-neutral-700">
+            I love solving complex problems, studying and understanding human behavior, and looking at challenges through unique, non-linear ways of thinking.
+          </p>
+        </div>
+        <div class="bg-white border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-3 relative border-t-8 border-t-[#A8003A]">
+          <h5 class="font-mono font-bold text-sm uppercase text-[#A8003A] border-b border-[#291F1E] pb-1">My Professional Interests</h5>
+          <p class="text-xs leading-relaxed text-neutral-700">
+            I am deeply interested in cognitive accessibility, neurodiversity, inclusion, social impact, and creating interactive digital products and games that make information clear.
+          </p>
+        </div>
+      </div>
+
+      <!-- IKIGAI MATRIX -->
+      <div class="space-y-6">
+        <h4 class="text-lg font-bold font-mono uppercase tracking-wider text-[#DC326A]">
+          My Ikigai Matrix
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-[#FFCFEE]/20 border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-3">
+            <h5 class="font-mono font-bold text-sm uppercase text-[#DC326A] border-b-2 border-[#291F1E] pb-1">What I Love</h5>
+            <p class="text-xs text-[#291F1E] leading-relaxed font-medium">
+              Solving problems, conceptualizing tools, apps, and games, bringing awareness to mental health, and helping people without judgment.
+            </p>
+          </div>
+          <div class="bg-[#D3B0EA]/20 border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-3">
+            <h5 class="font-mono font-bold text-sm uppercase text-[#D3B0EA] border-b-2 border-[#291F1E] pb-1">What I'm Good At</h5>
+            <p class="text-xs text-[#291F1E] leading-relaxed font-medium">
+              Conceptualizing ideas, understanding human behavior, learning fast, and thinking uniquely. I have a broad skill set spanning design, front-end development, and structuring processes, all driven by passion, empathy, and a strong sense of justice.
+            </p>
+          </div>
+          <div class="bg-white border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-3">
+            <h5 class="font-mono font-bold text-sm uppercase text-[#291F1E] border-b-2 border-[#291F1E] pb-1">What I Can Be Paid For</h5>
+            <p class="text-xs text-[#291F1E] leading-relaxed font-medium">
+              Game design, UX design, user research, front-end development, and project organization or strategy for social causes.
+            </p>
+          </div>
+          <div class="bg-[#FD9BCF]/20 border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-3">
+            <h5 class="font-mono font-bold text-sm uppercase text-[#A8003A] border-b-2 border-[#291F1E] pb-1">What the World Needs</h5>
+            <p class="text-xs text-[#291F1E] leading-relaxed font-medium">
+              Tools and structures designed for neurodivergent people, practical solutions to reduce suffering and improve executive functions, and more awareness about neurodiversity and mental health.
+            </p>
+          </div>
+        </div>
+        <div class="p-4 bg-[#291F1E] text-white text-center border-4 border-[#291F1E] window-shadow rounded-xs">
+          <p class="text-xs font-mono font-bold uppercase tracking-wider text-[#FD9BCF]">
+            My Core Ikigai: I am a Game Designer, UX, and Product Designer specialized in neurodiversity, crafting game mechanics and apps that help with ADHD and mental health.
+          </p>
+        </div>
+      </div>
+
+      <!-- MY DESIRED STATE AND AMBITIONS -->
+      <div class="bg-white border-4 border-[#291F1E] rounded-xs window-shadow-heavy overflow-hidden">
+        <div class="bg-[#291F1E] text-white px-4 py-2 flex items-center justify-between font-mono font-bold text-xs">
+          <span>My Desired State & Ambitions</span>
+          <span class="text-[#FD9BCF] pixel-text text-sm">5-Year Direction</span>
+        </div>
+        <div class="p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+          <div class="space-y-4">
+            <span class="text-xs uppercase tracking-widest font-mono font-bold bg-[#EFE1FC] border border-[#291F1E] px-2 py-0.5">My Goal</span>
+            <p class="text-sm leading-relaxed font-medium text-neutral-800">
+              In five years, I want to be a Game Designer or UX Designer specialized in neurodiversity. I want to work in Portugal or somewhere in Europe where I can work in an English-speaking environment.
+            </p>
+            <div class="p-4 bg-[#FFCFEE]/40 border-2 border-dashed border-[#291F1E] rounded-xs">
+              <span class="block text-xs font-mono font-bold uppercase text-[#DC326A] mb-1">My Ambition Statement:</span>
+              <p class="text-xs font-bold tracking-tight leading-relaxed">
+                To create real impact for people with ADHD and mental health struggles, helping them organize better and feel less stress in their day-to-day interactions.
+              </p>
+            </div>
+          </div>
+          <div class="bg-[#FFF3FC] border-4 border-[#291F1E] p-5 window-shadow space-y-3 text-xs font-mono">
+            <h4 class="font-bold text-sm uppercase tracking-wider border-b border-[#291F1E] pb-1 text-[#DC326A]">Practical Requirements:</h4>
+            <ul class="space-y-2">
+              <li><strong>Target Setting:</strong> Stable tech, education, or social gaming company.</li>
+              <li><strong>Work Model:</strong> Remote or in-person with fixed working hours.</li>
+              <li><strong>Work-Life Balance:</strong> Stable salary and a healthy routine where I can disconnect after hours.</li>
+              <li><strong>Task Diversity:</strong> A diverse range of tasks but structured within a comfortable routine.</li>
+              <li><strong>Recognition:</strong> Valued primarily for social impact and user wellness contributions.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- MY TOP 3 JOBS & VALUES -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        <div class="bg-white border-4 border-[#291F1E] p-6 window-shadow rounded-xs flex flex-col justify-between space-y-4">
+          <div>
+            <h4 class="font-bold text-sm uppercase tracking-wider border-b-2 border-[#291F1E] pb-1 text-[#DC326A] font-mono">My Target Careers</h4>
+            <ul class="space-y-2 text-xs font-mono mt-4">
+              <li class="border-b border-dashed border-neutral-300 pb-1">1. Product Designer (Focusing on UX, interaction, systems, and behavior)</li>
+              <li class="border-b border-dashed border-neutral-300 pb-1">2. Gamification Specialist in Digital Therapeutics (DTx)</li>
+              <li class="border-b border-dashed border-neutral-300 pb-1">3. Digital Learning Designer</li>
+            </ul>
+          </div>
+          <div class="p-3 bg-[#EFE1FC] border-2 border-[#291F1E] rounded-xs">
+            <span class="block text-[10px] font-bold text-[#A8003A] font-mono uppercase">Specific Target Job:</span>
+            <p class="text-xs font-bold font-mono">UX Designer with a strict focus on cognitive accessibility, neurodiversity, and interactive digital experiences.</p>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-[#291F1E] p-6 window-shadow rounded-xs space-y-4 flex flex-col justify-between">
+          <div>
+            <h4 class="font-bold text-sm uppercase tracking-wider border-b-2 border-[#291F1E] pb-1 text-[#291F1E] font-mono">My Values</h4>
+            <div class="flex flex-wrap gap-1.5 mt-3">
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">altruism</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">empathy</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">compassion</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">solidarity</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">integrity</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">equity</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">resilience</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">simplicity</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">curiosity</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">learning</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">justice</span>
+              <span class="px-2 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-xs font-mono">transparency</span>
+            </div>
+          </div>
+          <div class="text-xs font-medium leading-relaxed bg-[#FFF3FC] border border-[#291F1E] p-3 rounded-xs font-mono">
+            I believe that honesty is worth much more than a fake image. I prefer to be hated for who I am than loved for who I am not, and I believe no one should have to hide who they are just to be accepted.
+          </div>
+        </div>
+      </div>
+
+      <!-- TONE OF VOICE & AUDIENCE -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs font-mono">
+        <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-2">
+          <h5 class="font-bold text-[#DC326A] uppercase border-b border-[#291F1E] pb-1">Tone of Voice</h5>
+          <p class="text-neutral-700 leading-relaxed font-sans">
+            My tone is authentic, empathetic, just, clear, and honest. I communicate with deep respect for differences, avoiding corporate hype.
+          </p>
+        </div>
+        <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-2">
+          <h5 class="font-bold text-neutral-900 uppercase border-b border-[#291F1E] pb-1">Audience</h5>
+          <p class="text-neutral-700 leading-relaxed font-sans">
+            I create value for recruiters, employers, project teams, and digital organizations. Most importantly, my ultimate audience consists of neurodivergent people and communities who need and benefit from accessible design.
+          </p>
+        </div>
+      </div>
+
+      <!-- RATIONALE, MESSAGE, AND NARRATIVE -->
+      <div class="bg-[#FFCFEE]/30 border-4 border-[#291F1E] p-6 md:p-8 window-shadow rounded-xs space-y-3">
+        <h5 class="font-mono font-bold text-xs uppercase tracking-widest text-[#A8003A] bg-white border border-[#291F1E] w-max px-2 py-0.5">My Story & Narrative</h5>
+        <h4 class="text-xl font-bold tracking-tight font-serif text-[#291F1E] italic leading-relaxed">
+          "My story is about taking my own personal difficulties and the injustices I have witnessed and using them as fuel to create meaningful change. Because I feel the world differently, I connect design and technology to build digital experiences that are truly useful and inclusive. I don't design just to make things look cool; I design to solve real problems and make people feel less alone."
+        </h4>
+      </div>
+
+      <!-- STRENGTHS & SPEC SHEET -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 font-mono text-xs">
+        <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-4">
+          <h4 class="font-bold uppercase tracking-wider text-[#DC326A] border-b-2 border-[#291F1E] pb-1">Hard Skills</h4>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="px-2 py-1 bg-neutral-100 border border-[#291F1E] rounded-xs">UI/UX Design</span>
+            <span class="px-2 py-1 bg-neutral-100 border border-[#291F1E] rounded-xs">Web Dev</span>
+            <span class="px-2 py-1 bg-neutral-100 border border-[#291F1E] rounded-xs">Game Dev</span>
+            <span class="px-2 py-1 bg-neutral-100 border border-[#291F1E] rounded-xs">Prototyping</span>
+            <span class="px-2 py-1 bg-neutral-100 border border-[#291F1E] rounded-xs">User Research</span>
+            <span class="px-2 py-1 bg-neutral-100 border border-[#291F1E] rounded-xs">Visual Thinking</span>
+          </div>
+          <h5 class="font-bold uppercase tracking-wider text-black border-b border-[#291F1E] pb-0.5 mt-2">Tools</h5>
+          <div class="flex flex-wrap gap-1">
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Figma</span>
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Photoshop</span>
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Unity</span>
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Godot</span>
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Blender</span>
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Premiere</span>
+            <span class="px-1.5 py-0.5 bg-[#FFF3FC] border border-[#291F1E] text-[11px]">Aseprite</span>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-4">
+          <h4 class="font-bold uppercase tracking-wider text-purple-700 border-b-2 border-[#291F1E] pb-1">Soft Skills</h4>
+          <div class="flex flex-col gap-2">
+            <div>- Empathy</div>
+            <div>- Creativity</div>
+            <div>- Critical Thinking</div>
+            <div>- Fast Learning</div>
+            <div>- Persistence</div>
+            <div>- Strong sense of justice</div>
+          </div>
+        </div>
+
+        <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-4 border-t-8 border-t-[#A8003A] bg-[#FFF3FC]/30">
+          <h4 class="font-bold uppercase tracking-wider text-[#A8003A] border-b-2 border-[#291F1E] pb-1">My X-Factor</h4>
+          <p class="leading-relaxed font-sans text-neutral-700">
+            I have a hybrid profile. I can design an accessible journey and actually program it, bridging the communication and technical execution gap between design and development teams.
+          </p>
+        </div>
+      </div>
+
+      <!-- SWOT MATRIX -->
+      <div class="space-y-4">
+        <h4 class="text-sm font-mono font-bold uppercase tracking-wider text-[#291F1E] text-center border-b-4 border-[#291F1E] pb-2">
+          My SWOT Matrix
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-xs">
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-2">
+            <h5 class="font-bold font-mono text-green-700 uppercase border-b border-[#291F1E] pb-0.5">Strengths</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">
+              My multidisciplinary ability to bridge design and code, my deep empathy, my fast learning speed, and my 23 years of authentic lived experience with neurodivergence.
+            </p>
+          </div>
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-2">
+            <h5 class="font-bold font-mono text-red-700 uppercase border-b border-[#291F1E] pb-0.5">Weaknesses</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">
+              I am currently a student needing to finish my portfolio, and I sometimes struggle with the "shame" and fear of putting myself out there publicly or feeling like I am "trying too hard" in front of peers and family. Building a credible brand takes a lot of my energy and focus.
+            </p>
+          </div>
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-2">
+            <h5 class="font-bold font-mono text-blue-700 uppercase border-b border-[#291F1E] pb-0.5">Opportunities</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">
+              There is a great need for hybrid profiles (design + dev) focused on cognitive accessibility, as the market is saturated with generic UI designers but lacks specialists in neurodiversity for interactive experiences.
+            </p>
+          </div>
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow rounded-xs space-y-2">
+            <h5 class="font-bold font-mono text-orange-700 uppercase border-b border-[#291F1E] pb-0.5">Threats</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">
+              I face competition from highly specialized academic researchers on one side, and traditional "Creative Technologists" in agencies who focus on the aesthetic "wow" factor rather than true cognitive inclusion on the other.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE BRAND & PROCESS -->
+    <section id="part-2" class="space-y-12 scroll-mt-24">
+      <div class="flex items-center gap-4 border-b-4 border-[#291F1E] pb-4">
+        <span class="text-4xl font-black bg-[#FD9BCF] text-[#291F1E] px-4 py-1 border-4 border-[#291F1E] window-shadow font-mono">02</span>
+        <div>
+          <h3 class="text-3xl font-black uppercase tracking-tight font-mono">MY BRAND & PROCESS</h3>
+          <p class="text-xs font-bold text-gray-500 uppercase font-mono tracking-widest">Brand philosophy and logo process variations</p>
+        </div>
+      </div>
+
+      <!-- LOGO EXPLORATION GALLERY -->
+      <div class="space-y-6">
+        <h4 class="text-lg font-bold font-mono uppercase tracking-wider text-[#DC326A]">
+          My Logo Concept and Variations
+        </h4>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="bg-white border-2 border-[#291F1E] p-3 rounded-xs window-shadow text-center">
+            <div class="aspect-square bg-gray-50 border border-[#291F1E] overflow-hidden flex items-center justify-center p-2">
+              <img src="./imagesbrand/transferir (2).png" alt="Concept Sketch" class="max-w-full max-h-full object-contain">
+            </div>
+            <span class="block text-[10px] font-mono mt-2 text-neutral-500">Initial Sketch Concept</span>
+          </div>
+          <div class="bg-white border-2 border-[#291F1E] p-3 rounded-xs window-shadow text-center">
+            <div class="aspect-square bg-gray-50 border border-[#291F1E] overflow-hidden flex items-center justify-center p-2">
+              <img src="./imagesbrand/transferir (3).png" alt="Process Sketch" class="max-w-full max-h-full object-contain">
+            </div>
+            <span class="block text-[10px] font-mono mt-2 text-neutral-500">Process Exploration</span>
+          </div>
+          <div class="bg-white border-2 border-[#291F1E] p-3 rounded-xs window-shadow text-center">
+            <div class="aspect-square bg-gray-50 border border-[#291F1E] overflow-hidden flex items-center justify-center p-2">
+              <img src="./imagesbrand/Gemini_Generated_Image_kef4xkef4xkef4xk 1 [Vectorized].png" alt="Vectorized mark" class="max-w-full max-h-full object-contain">
+            </div>
+            <span class="block text-[10px] font-mono mt-2 text-neutral-500">Vectorized Logo Asset</span>
+          </div>
+          <div class="bg-white border-2 border-[#291F1E] p-3 rounded-xs window-shadow text-center">
+            <div class="aspect-square bg-gray-50 border border-[#291F1E] overflow-hidden flex items-center justify-center p-2">
+              <img src="./imagesbrand/Frame 11.png" alt="Logo Concept Frame" class="max-w-full max-h-full object-contain">
+            </div>
+            <span class="block text-[10px] font-mono mt-2 text-neutral-500">Logo Concept</span>
+          </div>
+        </div>
+        <div class="p-3 bg-[#EFE1FC] border border-[#291F1E] rounded-xs text-center">
+          <a href="./imagesbrand/concept (1) (1).pdf" target="_blank" class="text-xs font-bold font-mono text-[#A8003A] underline hover:text-[#291F1E]">
+            View My Branding Concept PDF Document
+          </a>
+        </div>
+      </div>
+
+      <!-- PERSONAL BRAND CANVAS -->
+      <div class="space-y-6">
+        <h4 class="text-lg font-bold font-mono uppercase tracking-wider text-[#DC326A]">
+          My Personal Brand Canvas
+        </h4>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow space-y-2">
+            <h5 class="font-bold font-mono text-[#DC326A] uppercase border-b border-[#291F1E] pb-1">My Goals</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">To build an authentic personal brand and position myself as a Product Designer specialized in cognitive accessibility and neurodiversity, expanding my credibility to attract meaningful tech roles.</p>
+          </div>
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow space-y-2">
+            <h5 class="font-bold font-mono text-neutral-900 uppercase border-b border-[#291F1E] pb-1">Core Competencies</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">Bridging visual UI/UX design, game development, prototyping, and user research. My technical hybrid background allows me to design clean interfaces and prototype them effectively.</p>
+          </div>
+          <div class="bg-white border-4 border-[#291F1E] p-5 window-shadow space-y-2">
+            <h5 class="font-bold font-mono text-purple-700 uppercase border-b border-[#291F1E] pb-1">My Identity</h5>
+            <p class="text-neutral-700 leading-relaxed font-sans">Direct, transparent, and honest. I prioritize human inclusion, equity, and empathy over superficial corporate images, keeping my designs aligned with real user needs.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- BRAND ESSENCE BOX -->
+      <div class="bg-neutral-950 text-white border-4 border-[#291F1E] p-8 window-shadow-heavy rounded-xs relative overflow-hidden">
+        <div class="absolute inset-0 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px] opacity-10"></div>
+        <div class="max-w-3xl mx-auto space-y-4 text-center relative z-10">
+          <span class="px-3 py-1 bg-[#DC326A] text-white border border-white uppercase font-mono font-bold text-xs tracking-widest">
+            Brand Philosophy
+          </span>
+          <p class="text-xl md:text-3xl font-bold tracking-tight italic font-serif text-[#FFCFEE] leading-snug">
+            "I design digital experiences that help people navigate, understand, and interact with technology with less friction. I focus on cognitive accessibility and user empathy from the ground up, ensuring my work serves people, not the other way around."
+          </p>
+          <div class="w-24 h-1 bg-[#DC326A] mx-auto"></div>
+          <span class="block text-xs font-mono uppercase tracking-widest text-neutral-400">Core Positioning Statement // Kind by Design</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE CAREER & PORTFOLIO STRATEGY -->
+    <section id="part-3" class="space-y-12 scroll-mt-24">
+      <div class="flex items-center gap-4 border-b-4 border-[#291F1E] pb-4">
+        <span class="text-4xl font-black bg-[#D3B0EA] text-[#291F1E] px-4 py-1 border-4 border-[#291F1E] window-shadow font-mono">03</span>
+        <div>
+          <h3 class="text-3xl font-black uppercase tracking-tight font-mono">MY CAREER & PORTFOLIO</h3>
+          <p class="text-xs font-bold text-gray-500 uppercase font-mono tracking-widest">Odyssey careers, project choice rationales, and case study showcase</p>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO SELECTION RATIONALE -->
+      <div class="space-y-6">
+        <div class="bg-white border-4 border-[#291F1E] p-6 md:p-8 window-shadow rounded-xs space-y-4">
+          <span class="text-xs uppercase tracking-widest font-mono font-bold bg-[#EFE1FC] border border-[#291F1E] px-2 py-0.5">My Portfolio Strategy</span>
+          <h4 class="text-2xl font-bold font-mono tracking-tight text-[#A8003A]">Bridging Media and Accessibility</h4>
+          <p class="text-sm leading-relaxed font-medium text-neutral-800 font-sans">
+            I have chosen these projects to demonstrate my range as a hybrid creator who works across different media. By showing a combination of photography, painting, digital gamification, editorial print, augmented reality, and virtual reality, I prove that I can address cognitive accessibility and neurodiversity through multiple creative dimensions, bridging design, physical media, and interactive code.
+          </p>
+        </div>
+
+        <div class="border-4 border-[#291F1E] bg-white rounded-xs window-shadow overflow-hidden text-xs">
+          <div class="grid grid-cols-1 md:grid-cols-3 font-mono font-bold bg-[#291F1E] text-white border-b-2 border-[#291F1E] p-3">
+            <div>Project Definition</div>
+            <div>Validating Skills & Capabilities</div>
+            <div>Strategic Rationale</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 border-b border-neutral-300 p-4 items-center gap-4">
+            <div class="font-bold text-[#DC326A] font-mono">Task Garden AR Assistant & In Pursuit of Focus VR Game</div>
+            <div class="text-neutral-600">XR interaction design, spatial prototyping, and immersive task workflows.</div>
+            <div class="font-medium text-[#291F1E]">These show my forward-looking interaction design skills, virtual reality conceptualizing, and my ability to build immersive cognitive assistants that mitigate executive fatigue.</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 border-b border-neutral-300 p-4 items-center gap-4 bg-neutral-50/50">
+            <div class="font-bold text-[#D3B0EA] font-mono">Milho a Pardais App Concept</div>
+            <div class="text-neutral-600">Gamification reward structures, UI/UX focus feedback, and layout systems.</div>
+            <div class="font-medium text-[#291F1E]">This demonstrates my ability to design gamified interfaces and reward loops that support student focus and behavior.</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 border-b border-neutral-300 p-4 items-center gap-4">
+            <div class="font-bold text-[#291F1E] font-mono">Metamorphosis ADHD Magazine</div>
+            <div class="text-neutral-600">Typography curation, hierarchy structure, graphic layouts, and high contrast styling.</div>
+            <div class="font-medium text-[#291F1E]">This highlights my foundations in typography, high-contrast layouts, and visual hierarchy, ensuring print and digital layout clarity.</div>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 p-4 items-center gap-4 bg-neutral-50/50">
+            <div class="font-bold text-gray-500 font-mono">Self-Portrait Photography & Mixed-Media Painting</div>
+            <div class="text-neutral-600">Artistic concepts, visual storytelling, and raw chronic-treatment narratives.</div>
+            <div class="font-medium text-[#291F1E]">These showcase my artistic side, conceptual depth, raw storytelling, and emotional honesty about chronic illness and ADHD, proving that my work is grounded in real, authentic experience.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PORTFOLIO SHOWCASE CAROUSEL -->
+      <div class="space-y-4">
+        <div class="flex justify-between items-center text-xs font-mono">
+          <span class="font-bold text-[#291F1E] uppercase">Selected Projects Showcase</span>
+          <div class="flex gap-2">
+            <button onclick="slidePortfolio(-1)" class="px-2 py-1 bg-white border-2 border-[#291F1E] font-bold window-shadow cursor-pointer select-none active:translate-y-0.5">Previous</button>
+            <button onclick="slidePortfolio(1)" class="px-2 py-1 bg-white border-2 border-[#291F1E] font-bold window-shadow cursor-pointer select-none active:translate-y-0.5">Next</button>
+          </div>
+        </div>
+
+        <div class="relative overflow-hidden w-full border-4 border-[#291F1E] bg-white rounded-xs p-6 min-h-[200px]">
+          <div class="relative w-full">
+            
+            <div id="slide-node-0" class="portfolio-slide space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="font-mono font-bold text-[11px] uppercase tracking-widest text-green-700 bg-green-50 border border-green-300 px-2 py-0.5">Project 1 // Photography</span>
+                <a href="./ptfl/photo-series.html" target="_blank" class="font-mono font-bold text-[#A8003A] underline">Open Project</a>
+              </div>
+              <h5 class="text-base font-bold font-mono text-[#291F1E]">Self-Portrait Photography Series</h5>
+              <p class="text-neutral-600 leading-relaxed font-sans">A series of staged self-portraits exploring ADHD, chronic illness, and the emotional weight of living with both. It communicates complex personal barriers through raw photography.</p>
+            </div>
+
+            <div id="slide-node-1" class="portfolio-slide hidden space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="font-mono font-bold text-[11px] uppercase tracking-widest text-[#DC326A] bg-[#FFF3FC] border border-[#291F1E] px-2 py-0.5">Project 2 // Painting</span>
+                <a href="./ptfl/symbolist-painting.html" target="_blank" class="font-mono font-bold text-[#A8003A] underline">Open Project</a>
+              </div>
+              <h5 class="text-base font-bold font-mono text-[#291F1E]">Mixed-Media Self-Portrait Painting</h5>
+              <p class="text-neutral-600 leading-relaxed font-sans">A mixed-media self-portrait combining paint, pastels, and chronic-treatment medication. It visually translates mental and physiological realities onto canvas.</p>
+            </div>
+
+            <div id="slide-node-2" class="portfolio-slide hidden space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="font-mono font-bold text-[11px] uppercase tracking-widest text-yellow-700 bg-yellow-50 border border-yellow-300 px-2 py-0.5">Project 3 // Gamification</span>
+                <a href="./ptfl/digimedia-gamification.html" target="_blank" class="font-mono font-bold text-[#A8003A] underline">Open Project</a>
+              </div>
+              <h5 class="text-base font-bold font-mono text-[#291F1E]">Milho a Pardais App Concept</h5>
+              <p class="text-neutral-600 leading-relaxed font-sans">A gamified UI/UX platform exploring how structured rewarding feedback architectures transform student engagement patterns, helping improve focus habits.</p>
+            </div>
+
+            <div id="slide-node-3" class="portfolio-slide hidden space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="font-mono font-bold text-[11px] uppercase tracking-widest text-[#D3B0EA] bg-[#EFE1FC] border border-[#291F1E] px-2 py-0.5">Project 4 // Editorial</span>
+                <a href="./ptfl/adhd-magazine.html" target="_blank" class="font-mono font-bold text-[#A8003A] underline">Open Project</a>
+              </div>
+              <h5 class="text-base font-bold font-mono text-[#291F1E]">Metamorphosis ADHD Magazine</h5>
+              <p class="text-neutral-600 leading-relaxed font-sans">A punk-inspired publication rebranding ADHD through accessible science, lived narratives, and high contrast typography tailored for readable focus.</p>
+            </div>
+
+            <div id="slide-node-4" class="portfolio-slide hidden space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="font-mono font-bold text-[11px] uppercase tracking-widest text-blue-700 bg-blue-50 border border-blue-300 px-2 py-0.5">Project 5 // Augmented Reality</span>
+                <a href="./ptfl/task-garden-ar.html" target="_blank" class="font-mono font-bold text-[#A8003A] underline">Open Project</a>
+              </div>
+              <h5 class="text-base font-bold font-mono text-[#291F1E]">Task Garden AR Assistant</h5>
+              <p class="text-neutral-600 leading-relaxed font-sans">An AR task-management application translating micro-steps into a growing 3D garden space to mitigate executive fatigue and improve task follow-through.</p>
+            </div>
+
+            <div id="slide-node-5" class="portfolio-slide hidden space-y-2 text-xs">
+              <div class="flex justify-between items-center">
+                <span class="font-mono font-bold text-[11px] uppercase tracking-widest text-purple-700 bg-purple-50 border border-purple-300 px-2 py-0.5">Project 6 // Virtual Reality</span>
+                <a href="./ptfl/pursuit-of-focus-vr.html" target="_blank" class="font-mono font-bold text-[#A8003A] underline">Open Project</a>
+              </div>
+              <h5 class="text-base font-bold font-mono text-[#291F1E]">In Pursuit of Focus VR Game</h5>
+              <p class="text-neutral-600 leading-relaxed font-sans">A first-person VR ADHD simulation rendering working-memory friction, sensory load spikes, and focus-breaks through play, building public awareness.</p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: THE ACTION PLAN -->
+    <section id="part-4" class="space-y-12 scroll-mt-24">
+      <div class="flex items-center gap-4 border-b-4 border-[#291F1E] pb-4">
+        <span class="text-4xl font-black bg-[#291F1E] text-white px-4 py-1 border-4 border-[#291F1E] window-shadow font-mono">04</span>
+        <div>
+          <h3 class="text-3xl font-black uppercase tracking-tight font-mono">MY ACTION PLAN</h3>
+          <p class="text-xs font-bold text-gray-500 uppercase font-mono tracking-widest">Validation loop and chronological milestones</p>
+        </div>
+      </div>
+
+      <!-- 4-WEEK MINI TEST -->
+      <div class="bg-[#FFF3FC] border-4 border-[#291F1E] p-6 rounded-xs window-shadow grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <div class="lg:col-span-1 space-y-3">
+          <span class="px-2 py-0.5 bg-[#291F1E] text-white font-mono font-bold text-[10px] uppercase rounded-xs">My 4-Week Validation Loop</span>
+          <h4 class="font-mono font-bold text-sm uppercase border-b border-[#291F1E] pb-1">Low-Risk Hypothesis Testing</h4>
+          <p class="text-xs leading-relaxed text-neutral-700">
+            I don't need a final, static career plan to start. Instead, I execute controlled, short-term validation sprints to test my options in real-world settings.
+          </p>
+        </div>
+        <div class="lg:col-span-2 bg-white border-2 border-[#291F1E] p-4 rounded-xs space-y-3 text-xs">
+          <span class="font-bold text-[#DC326A] font-mono block uppercase">Action Script Tasks:</span>
+          <div class="space-y-2 font-mono text-[11px]">
+            <div class="flex items-start gap-2 border-b border-neutral-100 pb-1"><strong>Week 1:</strong> <span>Audit a complex interface to identify cognitive barriers for ADHD users.</span></div>
+            <div class="flex items-start gap-2 border-b border-neutral-100 pb-1"><strong>Week 2:</strong> <span>Design a simplified, low-friction mobile concept in Figma to resolve those barriers.</span></div>
+            <div class="flex items-start gap-2 border-b border-neutral-100 pb-1"><strong>Week 3:</strong> <span>Present the concept in online design and accessibility communities to collect qualitative feedback.</span></div>
+            <div class="flex items-start gap-2 pb-1"><strong>Week 4:</strong> <span>Document the findings and process into a clean case study for my UX portfolio.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CHRONOLOGICAL MILESTONES -->
+      <div class="bg-white border-4 border-[#291F1E] p-6 rounded-xs window-shadow-heavy space-y-6">
+        <h4 class="text-sm font-mono font-bold uppercase tracking-wider text-center bg-[#291F1E] text-white py-1 max-w-sm mx-auto window-shadow">
+          Chronological Milestones
+        </h4>
+        <div class="space-y-6 font-mono text-xs">
+          <div class="p-4 border-2 border-[#291F1E] bg-[#FFF3FC] rounded-xs space-y-3 relative border-l-4 border-l-[#DC326A]">
+            <span class="font-bold block text-[#DC326A] uppercase">Immediate Targets (Now - Sep 2026)</span>
+            <ul class="space-y-1.5 text-[11px] font-sans text-neutral-700 leading-relaxed list-disc pl-4">
+              <li>Apply for my Master's program (Mestrado) by July 14.</li>
+              <li>Apply for the Portuguese Meeting on Inclusion (Encontro Luso sobre Inclusão).</li>
+              <li>Apply for the September Summerschool by the end of July.</li>
+              <li>From July 20 forward, evaluate and complete structured design courses.</li>
+              <li>Polish copy, layout, and project presentations for my final "bare minimum portfolio."</li>
+              <li>Assess my time and decide whether to develop additional portfolio projects.</li>
+              <li>Start studying for my driver's theory exam, and pass both theory and practical driving exams by August.</li>
+              <li>Assess and decide on my housing options for the duration of my Master's studies.</li>
+              <li><strong>Acceptance Scenario:</strong> If I am not accepted into the Master's program, I will use this time to focus on my health, engage more with professional networks, and restart my social initiatives.</li>
+            </ul>
+          </div>
+          <div class="p-4 border-2 border-[#291F1E] bg-[#EFE1FC] rounded-xs space-y-2 relative border-l-4 border-l-purple-600">
+            <span class="font-bold block text-purple-700 uppercase">1-Year Milestone (By June 2027)</span>
+            <p class="text-[11px] font-sans text-neutral-600 leading-relaxed">Complete the first curricular year of the Master's program in Accessibility and Inclusion, and publish 3 to 4 detailed project case studies in my portfolio.</p>
+          </div>
+          <div class="p-4 border-2 border-[#291F1E] bg-[#FD9BCF]/30 rounded-xs space-y-2 relative border-l-4 border-l-neutral-900">
+            <span class="font-bold block text-neutral-900 uppercase">3-Year Milestone (By June 2029)</span>
+            <p class="text-[11px] font-sans text-neutral-600 leading-relaxed">Complete my Master's degree in Accessibility and Inclusion (Mestrado em Acessibilidade e Inclusão) and accumulate practical interaction design experience.</p>
+          </div>
+          <div class="p-4 border-2 border-[#291F1E] bg-[#291F1E] text-white rounded-xs space-y-2 relative border-l-4 border-l-white">
+            <span class="font-bold block text-[#FD9BCF] uppercase">5-Year Target (By June 2031)</span>
+            <p class="text-[11px] font-sans text-neutral-300 leading-relaxed">Secure a stable position at a tech, education, or social gaming company with healthy work-life boundaries (fixed working hours), and begin mentoring other neurodivergent designers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t-4 border-[#291F1E] bg-[#291F1E] text-white p-6 text-center font-mono text-xs font-bold uppercase tracking-widest relative z-10">
+    <p>Kind by Design // Vanessa Gaspar // Portfolio Strategy</p>
+  </footer>
+
   <script>
-    window.addEventListener('DOMContentLoaded', () => {
-      const hCard = document.getElementById('playbookHeaderCard');
-      const sCard = document.getElementById('playbookStatusCard');
+    // Carousel logic engine for Part 3 Portfolio shortlists
+    let currentSlideIndex = 0;
+    const totalSlidesCount = 6;
 
-      // Trigger structural card elements entrance loop
-      setTimeout(() => {
-        hCard.classList.remove('opacity-0', '-translate-y-4');
-        hCard.classList.add('opacity-100', 'translate-y-0');
-      }, 200);
-
-      setTimeout(() => {
-        sCard.classList.remove('opacity-0', 'translate-y-4');
-        sCard.classList.add('opacity-100', 'translate-y-0');
-      }, 550);
-    });
-
-    // Particle Logic
-    const pixelCanvas = document.getElementById('pixelCanvas');
-    const pCtx = pixelCanvas.getContext('2d');
-    let pxArray = [];
-    const colorMatrix = ['#D3B0EA', '#A8003A', '#FFF3FC', '#000000'];
-
-    function resizePxCanvas() { pixelCanvas.width = window.innerWidth; pixelCanvas.height = window.innerHeight; }
-    window.addEventListener('resize', resizePxCanvas);
-    resizePxCanvas();
-
-    window.addEventListener('mousemove', (e) => {
-      if (Math.random() > 0.4) {
-        pxArray.push({
-          x: e.clientX, y: e.clientY,
-          size: Math.floor(Math.random() * 4) + 4,
-          color: colorMatrix[Math.floor(Math.random() * colorMatrix.length)],
-          alpha: 1, vy: Math.random() * 2 + 0.6
-        });
+    function slidePortfolio(direction) {
+      document.getElementById('slide-node-' + currentSlideIndex).classList.add('hidden');
+      currentSlideIndex += direction;
+      
+      if (currentSlideIndex >= totalSlidesCount) {
+        currentSlideIndex = 0;
+      } else if (currentSlideIndex < 0) {
+        currentSlideIndex = totalSlidesCount - 1;
       }
-    });
-
-    function loopPixels() {
-      pCtx.clearRect(0, 0, pixelCanvas.width, pixelCanvas.height);
-      pxArray.forEach(p => {
-        p.y += p.vy; p.alpha -= 0.02;
-        pCtx.fillStyle = p.color; pCtx.globalAlpha = p.alpha;
-        pCtx.fillRect(p.x, p.y, p.size, p.size);
-      });
-      pxArray = pxArray.filter(p => p.alpha > 0);
-      pCtx.globalAlpha = 1.0;
-      requestAnimationFrame(loopPixels);
+      
+      document.getElementById('slide-node-' + currentSlideIndex).classList.remove('hidden');
     }
-    loopPixels();
   </script>
 </body>
 
